@@ -199,7 +199,11 @@ for (const width of [360, 768, 1440]) {
   test(`usable and accessible at ${width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto('./');
-    await page.screenshot({ path: testInfo.outputPath(`equipes-${width}.png`), fullPage: true });
+    await page.screenshot({
+      path: testInfo.outputPath(`equipes-${width}.png`),
+      fullPage: true,
+      animations: 'disabled',
+    });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
       true,
     );
@@ -210,7 +214,11 @@ for (const width of [360, 768, 1440]) {
     await page.getByRole('button', { name: 'Usar lista de exemplo' }).click();
     await page.getByRole('button', { name: 'Sortear equipes', exact: true }).click();
     await expect(page.getByRole('heading', { name: 'Resultado do sorteio' })).toBeVisible();
-    await page.screenshot({ path: testInfo.outputPath(`resultado-${width}.png`), fullPage: true });
+    await page.screenshot({
+      path: testInfo.outputPath(`resultado-${width}.png`),
+      fullPage: true,
+      animations: 'disabled',
+    });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
       true,
     );

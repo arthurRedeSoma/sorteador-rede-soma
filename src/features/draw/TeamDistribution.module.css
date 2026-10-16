@@ -1,0 +1,92 @@
+.distribution {
+  margin-top: 22px;
+  color: #fff;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary > svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.summary strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.summary p {
+  margin-top: 4px;
+  color: #e0edf8;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.diagram {
+  margin-top: 14px;
+}
+
+.groups {
+  display: flex;
+  gap: 12px;
+}
+
+.group {
+  flex: 1;
+  min-width: 0;
+}
+
+.groupLabel {
+  display: block;
+  color: #e0edf8;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.groupQuantity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.groupQuantity strong {
+  font-size: 18px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.dots {
+  display: grid;
+  grid-template-columns: repeat(4, 9px);
+  grid-template-rows: repeat(2, 9px);
+  gap: 4px;
+}
+
+.dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-green-brand);
+}
+
+.remaining {
+  display: block;
+  color: #e0edf8;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+@media (max-width: 420px) {
+  .groups {
+    gap: 8px;
+  }
+}

@@ -21,4 +21,6 @@ Uma segunda revisão combinou detector, código e navegador. Os três avisos de 
 
 ## Alcance
 
+Na revisão visual da versão 1.1.0, foram repetidos os cenários sobre o novo painel e os resultados. A revisão independente pediu pontos maiores e alinhados na prévia; o ajuste foi aplicado. O detector apontou apenas usos de Montserrat, mantida pela marca. Capturas finalizam a revelação de 300 ms antes de registrar a tela.
+
 Esses resultados não constituem certificação integral de acessibilidade. Não houve auditoria manual com leitor de tela nem testes em aparelhos físicos, Safari ou Firefox nesta entrega. A revisão da transparência valida regras e consistência; não certifica tentativa única, ambiente do organizador ou origem independente da aleatoriedade.

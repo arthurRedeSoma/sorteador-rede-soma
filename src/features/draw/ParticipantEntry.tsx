@@ -1,4 +1,4 @@
-import { ArrowRight, Check, FileUp, Users } from 'lucide-react';
+import { ArrowRight, Check, FileUp } from 'lucide-react';
 import { deduplicateParticipants } from '../../domain/participants';
 import type { PreparedParticipants } from './prepareDraw';
 import styles from './DrawWorkbench.module.css';
@@ -49,7 +49,6 @@ export function ParticipantEntry({
         />
         <div className={styles.textareaFooter}>
           <span aria-live="polite">
-            <Users />
             <strong>{total.toLocaleString('pt-BR')}</strong>{' '}
             {total === 1 ? 'participante' : 'participantes'}
           </span>

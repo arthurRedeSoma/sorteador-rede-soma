@@ -6,7 +6,7 @@
 .header {
   width: min(1200px, calc(100% - 80px));
   margin: 0 auto;
-  min-height: 108px;
+  min-height: 96px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,8 +31,11 @@
   background: var(--color-line);
 }
 .brandName {
-  font-size: 19px;
-  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-blue);
 }
 .headerActions {
   display: flex;
@@ -54,9 +57,10 @@
   color: var(--color-blue);
 }
 .historyButton {
-  border: 0;
-  background: none;
-  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: white;
+  padding: 8px 14px;
 }
 .historyButton b {
   background: var(--color-soft);
@@ -69,7 +73,7 @@
 }
 .main {
   width: min(1200px, calc(100% - 80px));
-  margin: 42px auto 64px;
+  margin: 36px auto 48px;
   flex: 1;
 }
 .footer {
@@ -90,10 +94,10 @@
   gap: 10px;
 }
 .footerMark {
-  width: 7px;
-  height: 7px;
+  width: 20px;
+  height: 5px;
   background: var(--color-green-brand);
-  border-radius: 50%;
+  border-radius: 2px;
 }
 .footer .footerLinks {
   gap: 24px;
@@ -238,6 +242,10 @@
   }
   .headerActions {
     gap: 8px;
+  }
+  .historyButton {
+    padding: 6px 8px;
+    border: 0;
   }
   .main {
     margin-top: 28px;

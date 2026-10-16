@@ -6,8 +6,8 @@ Autoridade visual: manual fornecido pelo usuário e composição aprovada. As re
 
 | Papel               | Valor                        | Uso                                                 |
 | ------------------- | ---------------------------- | --------------------------------------------------- |
-| Azul principal      | `#0F62AC`                    | Ação principal, navegação, foco                     |
-| Verde principal     | `#00AD57`                    | Acentos e detalhes do resultado                     |
+| Azul principal      | `#0F62AC`                    | Painel de regras, navegação, tipografia e foco      |
+| Verde principal     | `#00AD57`                    | Ação de sorteio, fichas da prévia e acentos         |
 | Verde de contraste  | `#16861B`                    | Texto e controles, após conferir contraste          |
 | Superfície          | `#FFFFFF`                    | Fundo predominante                                  |
 | Superfície auxiliar | Cinza azulado muito claro    | Separação funcional de regiões                      |
@@ -21,18 +21,25 @@ O logo colorido é aplicado sobre branco, com dimensões proporcionais. Não inc
 
 ## Composição
 
+Direção visual: **mesa de formação**. A lista branca lembra uma ficha de sorteio, com contador destacado e separação pontilhada. O painel azul concentra as decisões; o verde marca a execução e representa participantes na prévia. A personalidade vem do mecanismo de juntar e dividir pessoas.
+
 - Cabeçalho compacto com marca, nome da ferramenta e acesso a instruções.
-- Conteúdo até 1.200 px; título curto, navegação entre modalidades e ferramenta imediatamente disponível.
+- Conteúdo até 1.200 px; título curto com a modalidade em azul. No desktop, navegação ao lado do título; em telas menores, abaixo. Ferramenta imediatamente disponível.
 - Participantes à esquerda e configurações à direita. Resultado abaixo, em largura completa.
 - No celular: participantes, regras, ação e resultado, mantendo a ordem do DOM e do foco.
 - Escala de espaçamento baseada em 4/8 px; proximidade agrupa campos relacionados. Cantos moderados e bordas apenas quando ajudam a distinguir interação ou região.
 - Uma ação principal por etapa. Importação, exemplo, verificação e histórico têm prioridade secundária.
+- Painel de regras com fundo azul e controles brancos. A ação principal usa verde com texto verde muito escuro (`#002E1F`) para contraste AA. Foco branco no painel; foco interno azul nos campos brancos.
+- Prévia de equipes: contagens reais de até quatro grupos, até oito pontos por grupo e resumo do excedente. Nunca mostrar participantes inventados ou insinuar uma distribuição sorteada antes da confirmação.
+- Resultado com números de equipe em Montserrat, superfícies alternadas azul/verde claras e separação pontilhada. Números sorteados usam formas arredondadas que remetem às fichas de sorteio.
 
 ## Estados e interação
 
 Lista inicialmente vazia, com orientação curta. Exemplo só entra por ação explícita. Duplicatas, importação e erros aparecem perto da decisão correspondente. Configurações antecipam a distribuição antes do sorteio.
 
 Resultado é um registro estável. Apresentação, contagem e revelação apenas mostram os mesmos dados; nunca sorteiam novamente. A impressão remove controles e preserva a identificação do registro.
+
+A única animação autoral é a revelação do conjunto de resultados por recorte, em 300 ms. O cálculo já terminou; não há espera artificial ou rotação de nomes. Movimento reduzido e impressão mostram o conteúdo imediatamente. Capturas automatizadas finalizam animações para evitar imagens incompletas.
 
 ## Critério visual
 

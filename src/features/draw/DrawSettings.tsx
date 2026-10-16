@@ -1,6 +1,7 @@
-import { ChevronDown, Minus, Plus, Shuffle, Users } from 'lucide-react';
+import { ChevronDown, Minus, Plus, Shuffle } from 'lucide-react';
 import type { DrawDraft } from '../../platform/draft';
 import { getTeamDistribution } from './prepareDraw';
+import { TeamDistribution } from './TeamDistribution';
 import styles from './DrawWorkbench.module.css';
 
 type TeamOptions = Pick<DrawDraft, 'teamRule' | 'teamAmount'>;
@@ -65,27 +66,14 @@ export function TeamSettings({ value, participantCount: total, onChange }: TeamP
           <Plus />
         </button>
       </div>
-      <div className={styles.distribution} aria-live="polite">
-        <Users />
-        <div>
-          <strong>
-            {valid
-              ? `${teamCount} equipes de ${smallest === largest ? smallest : `${smallest} a ${largest}`} ${largest === 1 ? 'pessoa' : 'pessoas'}`
-              : total < 2
-                ? 'Equipes na medida certa'
-                : 'Ajuste a divisão'}
-          </strong>
-          <p>
-            {valid
-              ? `${total} participantes, todos em uma equipe.`
-              : total < 2
-                ? 'Adicione pelo menos 2 nomes para ver a divisão.'
-                : teamRule === 'size' && teamCount < 2
-                  ? `Use no máximo ${total - 1} por equipe para formar ao menos 2 equipes.`
-                  : `Escolha entre 2 e ${total} equipes.`}
-          </p>
-        </div>
-      </div>
+      <TeamDistribution
+        total={total}
+        teamRule={teamRule}
+        teamCount={teamCount}
+        valid={valid}
+        smallest={smallest}
+        largest={largest}
+      />
     </>
   );
 }

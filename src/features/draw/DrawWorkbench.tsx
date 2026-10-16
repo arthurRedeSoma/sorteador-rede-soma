@@ -23,17 +23,17 @@ type Props = {
 };
 const modeInfo = {
   teams: {
-    title: 'Sorteador de equipes',
+    subject: 'equipes',
     description: 'Junte os nomes. Forme equipes. Deixe o acaso fazer a divisão.',
     action: 'Sortear equipes',
   },
   names: {
-    title: 'Sorteador de nomes',
+    subject: 'nomes',
     description: 'Uma lista de participantes. A mesma chance para cada inscrição.',
     action: 'Sortear nomes',
   },
   numbers: {
-    title: 'Sorteador de números',
+    subject: 'números',
     description: 'Escolha o intervalo e a quantidade. O próximo número é por acaso.',
     action: 'Sortear números',
   },
@@ -115,29 +115,33 @@ export function DrawWorkbench({ active, mode, record, sequence, onRecord }: Prop
   return (
     <>
       <div data-no-print>
-        <div className={styles.intro}>
-          <h1>{info.title}</h1>
-          <p>{info.description}</p>
+        <div className={styles.masthead}>
+          <div className={styles.intro}>
+            <h1>
+              Sorteador de <span>{info.subject}</span>
+            </h1>
+            <p>{info.description}</p>
+          </div>
+          <nav className={styles.tabs} aria-label="Modalidades de sorteio">
+            <a href="#/equipes" aria-current={mode === 'teams' ? 'page' : undefined}>
+              <Users />
+              Equipes
+            </a>
+            <a href="#/nomes" aria-current={mode === 'names' ? 'page' : undefined}>
+              <UserRound />
+              Nomes
+            </a>
+            <a href="#/numeros" aria-current={mode === 'numbers' ? 'page' : undefined}>
+              <Hash />
+              Números
+            </a>
+          </nav>
         </div>
         {warning && (
           <p className="notice" role="status">
             {warning}
           </p>
         )}
-        <nav className={styles.tabs} aria-label="Modalidades de sorteio">
-          <a href="#/equipes" aria-current={mode === 'teams' ? 'page' : undefined}>
-            <Users />
-            Equipes
-          </a>
-          <a href="#/nomes" aria-current={mode === 'names' ? 'page' : undefined}>
-            <UserRound />
-            Nomes
-          </a>
-          <a href="#/numeros" aria-current={mode === 'numbers' ? 'page' : undefined}>
-            <Hash />
-            Números
-          </a>
-        </nav>
         <div className={styles.workspace} ref={preparation}>
           <section className={styles.entry} aria-labelledby="entry-title">
             {mode === 'numbers' ? (

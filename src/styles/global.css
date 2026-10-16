@@ -14,11 +14,14 @@
   --color-line: #dce5ea;
   --color-soft: #f5f8fa;
   --color-green-soft: #f0f8f1;
+  --color-on-blue-muted: #d9ecfc;
   --color-error: #ac302c;
   --radius: 12px;
 }
 * {
   box-sizing: border-box;
+  scrollbar-color: #a5bdce transparent;
+  scrollbar-width: thin;
 }
 body {
   margin: 0;

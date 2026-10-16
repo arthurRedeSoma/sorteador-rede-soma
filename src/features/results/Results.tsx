@@ -48,13 +48,14 @@ export function Results({ record, sequence, onPresent, onDrawAgain, busy }: Prop
     <section className={styles.results} data-print-result aria-labelledby="result-title">
       <div className={styles.headingRow}>
         <div>
-          <p className={styles.complete}>
-            <Check />
-            Sorteio concluído
-          </p>
-          <h2 id="result-title" tabIndex={-1} ref={heading}>
-            Resultado do sorteio
-          </h2>
+          <div className={styles.titleLine}>
+            <h2 id="result-title" tabIndex={-1} ref={heading}>
+              Resultado do sorteio
+            </h2>
+            <span className={styles.complete} title="Sorteio concluído">
+              <Check aria-label="Sorteio concluído" />
+            </span>
+          </div>
           <p className={styles.summary}>
             {description}
             <span>·</span>Sorteio {sequence}
@@ -68,14 +69,19 @@ export function Results({ record, sequence, onPresent, onDrawAgain, busy }: Prop
         </button>
       </div>
       {result.mode === 'teams' ? (
-        <div className={styles.teams}>
+        <div className={styles.teams} key={record.id}>
           {result.teams.map((team, index) => (
             <section className={styles.team} key={index}>
               <div className={styles.teamHeading}>
-                <h3>Equipe {index + 1}</h3>
-                <span>
-                  {team.length} {team.length === 1 ? 'pessoa' : 'pessoas'}
-                </span>
+                <b className={styles.teamNumber} aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </b>
+                <div>
+                  <h3>Equipe {index + 1}</h3>
+                  <span>
+                    {team.length} {team.length === 1 ? 'pessoa' : 'pessoas'}
+                  </span>
+                </div>
               </div>
               <ul>
                 {team.map((person) => (
@@ -86,7 +92,7 @@ export function Results({ record, sequence, onPresent, onDrawAgain, busy }: Prop
           ))}
         </div>
       ) : result.mode === 'names' ? (
-        <ol className={styles.winners}>
+        <ol className={styles.winners} key={record.id}>
           {result.winners.map((person, index) => (
             <li key={person.id}>
               <span>{String(index + 1).padStart(2, '0')}</span>
@@ -95,7 +101,7 @@ export function Results({ record, sequence, onPresent, onDrawAgain, busy }: Prop
           ))}
         </ol>
       ) : (
-        <ol className={styles.numbers}>
+        <ol className={styles.numbers} key={record.id}>
           {result.numbers.map((number, index) => (
             <li key={index}>
               <span className="visuallyHidden">Posição {index + 1}: </span>
