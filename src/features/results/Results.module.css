@@ -1,0 +1,239 @@
+.results {
+  margin-top: 48px;
+  padding-top: 30px;
+  border-top: 1px solid var(--color-line);
+}
+.headingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.complete {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--color-green);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.complete svg {
+  width: 18px;
+  height: 18px;
+}
+.headingRow h2 {
+  font-size: 25px;
+  scroll-margin-top: 24px;
+}
+.headingRow h2:focus {
+  outline: none;
+}
+.headingRow h2:focus-visible {
+  outline: 2px solid var(--color-blue);
+}
+.summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--color-muted);
+  font-size: 15px;
+  margin-top: 8px;
+}
+.teams {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 20px;
+  margin-top: 26px;
+}
+.team {
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 250px;
+}
+.teamHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #f3f7fb;
+  padding: 17px 20px;
+}
+.teamHeading h3 {
+  color: var(--color-blue);
+}
+.teamHeading span {
+  font-size: 14px;
+  color: #4b667c;
+}
+.team:nth-child(even) .teamHeading {
+  background: var(--color-green-soft);
+}
+.team:nth-child(even) .teamHeading h3 {
+  color: #237431;
+}
+.team:nth-child(even) .teamHeading span {
+  color: #48704f;
+}
+.team ul {
+  list-style: none;
+  padding: 8px 20px;
+  margin: 0;
+  max-height: 380px;
+  overflow: auto;
+}
+.team li {
+  padding: 10px 0;
+  overflow-wrap: anywhere;
+}
+.team li + li {
+  border-top: 1px solid #edf1f4;
+}
+.winners {
+  list-style: none;
+  padding: 0;
+  margin: 26px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  gap: 0 28px;
+  max-height: 640px;
+  overflow: auto;
+}
+.winners li {
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--color-line);
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 78px;
+}
+.winners li > span {
+  color: var(--color-green);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 16px;
+}
+.winners strong {
+  color: var(--color-blue);
+  font-size: 25px;
+  overflow-wrap: anywhere;
+}
+.numbers {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-height: 640px;
+  overflow: auto;
+}
+.numbers li {
+  background: var(--color-green-soft);
+  color: #226a33;
+  font-size: 30px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.actions > div {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.actions .buttonSecondary {
+  font-size: 15px;
+}
+.feedback {
+  color: var(--color-muted);
+  font-size: 15px;
+  margin-top: 12px;
+  min-height: 22px;
+}
+.details {
+  font-size: 15px;
+  color: var(--color-muted);
+  padding-top: 12px;
+}
+.details summary {
+  cursor: pointer;
+  width: fit-content;
+  padding: 8px 0;
+}
+.details dl {
+  display: grid;
+  grid-template-columns: 115px minmax(0, 1fr);
+  gap: 8px 16px;
+  margin: 14px 0;
+}
+.details dt {
+  font-weight: 700;
+}
+.details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.details code {
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .headingRow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .headingRow h2 {
+    font-size: 23px;
+  }
+  .results {
+    margin-top: 32px;
+  }
+  .actions {
+    gap: 8px;
+  }
+  .actions > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .actions button {
+    font-size: 15px;
+    padding: 9px 12px;
+  }
+  .numbers li {
+    font-size: 25px;
+    padding: 12px 18px;
+  }
+}
+@media print {
+  .results {
+    margin-top: 0;
+  }
+  .teams {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .team {
+    content-visibility: visible;
+  }
+  .team ul,
+  .winners,
+  .numbers {
+    max-height: none;
+    overflow: visible;
+  }
+  .winners li {
+    content-visibility: visible;
+  }
+}

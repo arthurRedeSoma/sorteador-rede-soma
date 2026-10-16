@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.env*
+!.env.example
+manual-de-marca-paginas/
+.impeccable/
+*.local
+*.log
+*.tsbuildinfo
+.DS_Store

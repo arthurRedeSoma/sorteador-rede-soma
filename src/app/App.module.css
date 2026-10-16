@@ -1,0 +1,257 @@
+.shell {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  min-height: 108px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-line);
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+.brand img {
+  width: 145px;
+  height: 64px;
+  object-fit: contain;
+}
+.brandDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-line);
+}
+.brandName {
+  font-size: 19px;
+  font-weight: 700;
+}
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.helpLink,
+.historyButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-muted);
+  min-height: 44px;
+  font-size: 16px;
+}
+.helpLink:hover,
+.historyButton:hover {
+  color: var(--color-blue);
+}
+.historyButton {
+  border: 0;
+  background: none;
+  padding: 0;
+}
+.historyButton b {
+  background: var(--color-soft);
+  color: var(--color-blue);
+  min-width: 24px;
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+  padding: 2px 5px;
+}
+.main {
+  width: min(1200px, calc(100% - 80px));
+  margin: 42px auto 64px;
+  flex: 1;
+}
+.footer {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--color-line);
+  padding: 24px 0 28px;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+.footer > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footerMark {
+  width: 7px;
+  height: 7px;
+  background: var(--color-green-brand);
+  border-radius: 50%;
+}
+.footer .footerLinks {
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--color-muted);
+}
+.footer a:hover {
+  color: var(--color-blue);
+  text-decoration: underline;
+}
+.footer a svg {
+  width: 15px;
+  height: 15px;
+}
+.version {
+  font-size: 13px;
+}
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 10;
+  padding: 12px 20px;
+  background: #fff;
+}
+.skip:focus {
+  top: 10px;
+}
+.history {
+  padding: 24px;
+  background: var(--color-soft);
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+.sectionHeading p {
+  margin-top: 5px;
+}
+.historyEmpty {
+  margin-top: 24px;
+}
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  max-height: 320px;
+  overflow: auto;
+}
+.historyList li + li {
+  border-top: 1px solid var(--color-line);
+}
+.historyList button {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding: 14px 4px;
+  gap: 12px;
+  color: var(--color-ink);
+}
+.historyList button:hover {
+  color: var(--color-blue);
+}
+.historyList button > span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.historyList small {
+  color: var(--color-muted);
+}
+.help {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.help h1 {
+  margin-top: 16px;
+}
+.helpLead {
+  font-size: 21px;
+  color: var(--color-muted);
+  margin-top: 16px;
+}
+.help h2 {
+  margin: 32px 0 10px;
+}
+.helpActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+@media (max-width: 800px) {
+  .header,
+  .main,
+  .footer {
+    width: calc(100% - 40px);
+  }
+  .brand {
+    gap: 16px;
+  }
+  .headerActions {
+    gap: 16px;
+  }
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 520px) {
+  .header {
+    min-height: 86px;
+    gap: 12px;
+  }
+  .brand img {
+    width: 114px;
+    height: 50px;
+  }
+  .brandDivider,
+  .brandName {
+    display: none;
+  }
+  .helpLink span {
+    display: none;
+  }
+  .helpLink {
+    width: 44px;
+    justify-content: center;
+  }
+  .headerActions {
+    gap: 8px;
+  }
+  .main {
+    margin-top: 28px;
+    margin-bottom: 40px;
+  }
+  .footer .footerLinks {
+    gap: 16px;
+  }
+  .history {
+    padding: 16px;
+  }
+  .historyList button > span:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}

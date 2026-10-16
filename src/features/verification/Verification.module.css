@@ -1,0 +1,143 @@
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.intro > svg {
+  flex-shrink: 0;
+  margin-top: 8px;
+  color: var(--color-blue);
+}
+.intro h1 {
+  margin: 0 0 12px;
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+.intro p {
+  margin: 0;
+  max-width: 65ch;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+.upload {
+  display: grid;
+  gap: 12px;
+  padding: 28px 0;
+  border-block: 1px solid var(--color-line);
+}
+.upload > input {
+  max-width: 100%;
+}
+.upload input::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 12px;
+  color: var(--color-blue);
+  background: var(--color-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.hint {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.progress {
+  color: var(--color-muted);
+  padding-block: 20px;
+}
+.success,
+.error {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: var(--radius);
+}
+.success {
+  color: var(--color-ink);
+  background: #f0f8f2;
+}
+.success > svg {
+  color: var(--color-green);
+}
+.error {
+  color: #8c2222;
+  background: #fff3f1;
+}
+.success > svg,
+.error > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.success h2,
+.error h2 {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+.success p,
+.error p {
+  margin: 0;
+  line-height: 1.6;
+}
+.details {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0 0;
+}
+.details > div {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 12px;
+}
+.details dt {
+  color: var(--color-muted);
+}
+.details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.explanation {
+  margin-top: 40px;
+  max-width: 65ch;
+}
+.explanation h2 {
+  margin: 0 0 16px;
+  font-size: 1.125rem;
+}
+.explanation p {
+  line-height: 1.65;
+  color: var(--color-muted);
+}
+.explanation a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--color-blue);
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 1.375rem;
+  }
+  .intro {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .success,
+  .error {
+    gap: 12px;
+    padding: 20px 16px;
+  }
+  .details > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
